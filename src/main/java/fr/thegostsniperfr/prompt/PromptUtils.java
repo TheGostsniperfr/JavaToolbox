@@ -1,4 +1,4 @@
-package prompt;
+package fr.thegostsniperfr.prompt;
 
 import java.util.Scanner;
 

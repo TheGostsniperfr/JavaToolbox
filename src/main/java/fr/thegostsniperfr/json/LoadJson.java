@@ -1,4 +1,4 @@
-package json;
+package fr.thegostsniperfr.json;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;

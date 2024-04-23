@@ -1,4 +1,4 @@
-package file;
+package fr.thegostsniperfr.file;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package archive;
+package fr.thegostsniperfr.archive;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;

@@ -1,7 +1,7 @@
-package file;
+package fr.thegostsniperfr.file;
 
-import hash.HashUtils;
-import hash.HashType;
+import fr.thegostsniperfr.hash.HashUtils;
+import fr.thegostsniperfr.hash.HashType;
 
 import java.nio.file.Files;
 import java.nio.file.Path;

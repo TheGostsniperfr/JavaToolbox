@@ -1,4 +1,4 @@
-package hash;
+package fr.thegostsniperfr.hash;
 
 public enum HashType {
     SHA256("SHA-256"),
