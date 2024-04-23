@@ -1,6 +1,6 @@
-package fr.thegostsniperfr.archive;
+package fr.thegostsniperfr.java_toolbox.archive;
 
-import fr.thegostsniperfr.hash.HashUtils;
+import fr.thegostsniperfr.java_toolbox.hash.HashUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

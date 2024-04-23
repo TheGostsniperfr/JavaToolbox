@@ -1,4 +1,4 @@
-package fr.thegostsniperfr.json;
+package fr.thegostsniperfr.java_toolbox.json;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;

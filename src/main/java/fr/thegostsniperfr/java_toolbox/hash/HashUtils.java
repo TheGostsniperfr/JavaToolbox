@@ -1,4 +1,4 @@
-package fr.thegostsniperfr.hash;
+package fr.thegostsniperfr.java_toolbox.hash;
 
 import java.io.IOException;
 import java.io.InputStream;

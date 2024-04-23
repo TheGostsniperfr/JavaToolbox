@@ -1,4 +1,4 @@
-package fr.thegostsniperfr.hash;
+package fr.thegostsniperfr.java_toolbox.hash;
 
 public enum HashType {
     SHA256("SHA-256"),

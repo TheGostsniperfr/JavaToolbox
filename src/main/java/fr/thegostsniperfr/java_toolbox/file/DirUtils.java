@@ -1,4 +1,4 @@
-package fr.thegostsniperfr.file;
+package fr.thegostsniperfr.java_toolbox.file;
 
 import java.io.File;
 import java.io.IOException;
