@@ -3,7 +3,10 @@ package fr.thegostsniperfr.java_toolbox.file;
 import fr.thegostsniperfr.java_toolbox.hash.HashUtils;
 import fr.thegostsniperfr.java_toolbox.hash.HashType;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 
 public class FileUtils {
@@ -21,5 +24,12 @@ public class FileUtils {
         }
 
         return HashUtils.getHashFromFilePath(absFilePath, hashType).equals(hash);
+    }
+
+    public static void createFileIfNotExist(Path filePath) throws IOException {
+        if(Files.notExists(filePath)) {
+            Files.createDirectories(filePath.getParent());
+            Files.createFile(filePath);
+        }
     }
 }
