@@ -18,7 +18,7 @@ public enum OsType {
     }
 
     public static OsType getCurrentOsType() {
-        String osName = System.getProperty("os.name");
+        String osName = System.getProperty("os.name").toLowerCase();
         OsType currentOsType = OsType.NOT_SUPPORTED;
 
         if(osName.contains("win")) {
