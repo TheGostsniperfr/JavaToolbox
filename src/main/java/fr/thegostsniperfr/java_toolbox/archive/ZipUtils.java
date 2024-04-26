@@ -12,6 +12,14 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class ZipUtils {
+
+    /**
+     * Extract zip archive
+     *
+     * @param source Zip archive path
+     * @param targetDir Target path to extract data
+     * @throws IOException
+     */
     public static void Unzip(Path source, Path targetDir) throws IOException {
         try (final ZipFile zipFile = new ZipFile(source.toFile())) {
             final Enumeration<? extends ZipEntry> entries = zipFile.entries();

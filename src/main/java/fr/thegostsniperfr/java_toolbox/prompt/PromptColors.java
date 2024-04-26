@@ -1,5 +1,8 @@
 package fr.thegostsniperfr.java_toolbox.prompt;
 
+/**
+ * Java prompt color codes
+ */
 public enum PromptColors {
     RESET("\u001B[0m"),
     BLACK("\u001B[30m"),

@@ -17,6 +17,9 @@ public enum OsType {
         return osType;
     }
 
+    /**
+     * @return Current os
+     */
     public static OsType getCurrentOsType() {
         String osName = System.getProperty("os.name").toLowerCase();
         OsType currentOsType = OsType.NOT_SUPPORTED;

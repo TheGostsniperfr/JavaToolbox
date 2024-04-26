@@ -11,6 +11,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class SaveJson {
+
+
+    /**
+     * Save a json in a file
+     *
+     * @param jsonObject Json to save
+     * @param filePath File path to save json
+     * @param withIndent Add json indent
+     */
     public static void saveJsonAt(JsonObject jsonObject, Path filePath, boolean withIndent){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 

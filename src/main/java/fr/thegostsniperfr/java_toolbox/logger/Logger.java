@@ -18,6 +18,12 @@ public class Logger {
     private final DateFormat dateFormat;
     private final PrintWriter printWriter;
 
+    /**
+     * Simple logger to log message in a log file
+     *
+     * @param logFilePath Log file name
+     * @param title App title print in the logs
+     */
     public Logger(Path logFilePath, String title) {
         this.logFilePath = logFilePath;
         this.title = title;
@@ -33,18 +39,38 @@ public class Logger {
 
     }
 
+    /**
+     * Print a white color message in log
+     *
+     * @param msg Message to log
+     */
     public void info(String msg) {
         this.writeToLog(msg, "INFO", PromptColors.RESET);
     }
 
+    /**
+     * Print a cyan color message in log
+     *
+     * @param msg Message to log
+     */
     public void debug(String msg) {
         this.writeToLog(msg, "DEBUG", PromptColors.CYAN);
     }
 
+    /**
+     * Print a yellow color message in log
+     *
+     * @param msg Message to log
+     */
     public void warn(String msg) {
         this.writeToLog(msg, "WARN", PromptColors.YELLOW);
     }
 
+    /**
+     * Print a red color message in log
+     *
+     * @param msg Message to log
+     */
     public void err(String msg) {
         this.writeToLog(msg, "ERROR", PromptColors.RED);
     }

@@ -8,10 +8,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class FileUtils {
     /**
-     * Check if a file is still the same by checking his hash
+     * Check if a file is the same by checking its hash
      *
      * @param absFilePath absolute path to the file
      * @param hash current file hash
@@ -26,10 +29,41 @@ public class FileUtils {
         return HashUtils.getHashFromFilePath(absFilePath, hashType).equals(hash);
     }
 
+    /**
+     * Create a file if it doesn't exist
+     *
+     * @param filePath File to create
+     * @throws IOException
+     */
     public static void createFileIfNotExist(Path filePath) throws IOException {
         if(Files.notExists(filePath)) {
             Files.createDirectories(filePath.getParent());
             Files.createFile(filePath);
         }
+    }
+
+    /**
+     * Get all file recursively from a directory
+     *
+     * @param targetDirPath Target path
+     * @return list of files found
+     */
+    public static List<File> getRecursiveFilesFromDirPath(Path targetDirPath){
+        File targetDir = new File(targetDirPath.toUri());
+        if(!targetDir.exists() | !targetDir.isDirectory()){
+            throw new RuntimeException("Invalid path: " + targetDirPath);
+        }
+
+        List<File> listedFile = new ArrayList<>();
+
+        for(File file : Objects.requireNonNull(targetDir.listFiles())){
+            if(file.isFile()){
+                listedFile.add(file);
+                continue;
+            }
+            listedFile.addAll(getRecursiveFilesFromDirPath(file.toPath().toAbsolutePath()));
+        }
+
+        return listedFile;
     }
 }

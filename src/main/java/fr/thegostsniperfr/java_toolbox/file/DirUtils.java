@@ -10,6 +10,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class DirUtils {
+    /**
+     * Create a directories if it doesn't exist
+     *
+     * @param path Directory path
+     */
     public static void createDirIfNotExist(Path path){
         if(!Files.exists(path)){
             try {
@@ -24,29 +29,22 @@ public class DirUtils {
         }
     }
 
-    public static List<File> getRecursiveFilesFromDirPath(Path targetDirPath){
-        File targetDir = new File(targetDirPath.toUri());
-        if(!targetDir.exists() | !targetDir.isDirectory()){
-            throw new RuntimeException("Invalid path: " + targetDirPath);
-        }
-
-        List<File> listedFile = new ArrayList<>();
-
-        for(File file : Objects.requireNonNull(targetDir.listFiles())){
-            if(file.isFile()){
-                listedFile.add(file);
-                continue;
-            }
-            listedFile.addAll(getRecursiveFilesFromDirPath(file.toPath().toAbsolutePath()));
-        }
-
-        return listedFile;
-    }
-
+    /**
+     * Check if a directory exist
+     *
+     * @param targetDirPath Dir path to check
+     * @return true if exist
+     */
     public static Boolean isValidTargetDirPath(Path targetDirPath){
         return Files.exists(targetDirPath) && Files.isDirectory(targetDirPath);
     }
 
+    /**
+     * Check if a directory exist
+     *
+     * @param targetDirStrPath Dir path to check
+     * @return true if exist
+     */
     public static Boolean isValidTargetDirPath(String targetDirStrPath){
         return isValidTargetDirPath(Paths.get(targetDirStrPath));
     }

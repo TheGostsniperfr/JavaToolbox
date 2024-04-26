@@ -10,6 +10,13 @@ import java.util.zip.CRC32;
 
 public class HashUtils {
 
+    /**
+     * Get file hash
+     *
+     * @param filePath File path to get hash
+     * @param algoType Hash method
+     * @return Hash
+     */
     public static String getHashFromFilePath(Path filePath, HashType algoType){
         try {
             byte[] data = Files.readAllBytes(filePath);
@@ -21,6 +28,12 @@ public class HashUtils {
         }
     }
 
+    /**
+     * Get algo method type by its name
+     *
+     * @param algoName Algo method name
+     * @return Algo method type
+     */
     public static HashType getAlgoTypeByName(String algoName){
         for(HashType algoType : HashType.values()){
             if(algoType.getKey().equals(algoName)){
@@ -31,6 +44,12 @@ public class HashUtils {
         throw new IllegalArgumentException(algoName);
     }
 
+    /**
+     * Get file CRC32
+     *
+     * @param filePath File path
+     * @return CRC32 of the file
+     */
     public static long getCRC32(Path filePath) {
         CRC32 crc = new CRC32();
         try (InputStream inputStream = Files.newInputStream(filePath)) {

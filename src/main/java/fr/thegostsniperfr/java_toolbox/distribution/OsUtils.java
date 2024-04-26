@@ -4,6 +4,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class OsUtils {
+    /**
+     * @return Get the appdata directory path
+     */
     public static Path getAppdataDirPath() {
         String appDataPath = System.getenv("APPDATA");
         if (appDataPath == null) {

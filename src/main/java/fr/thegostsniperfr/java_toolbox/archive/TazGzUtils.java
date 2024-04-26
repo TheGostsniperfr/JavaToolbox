@@ -9,6 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class TazGzUtils {
+    /**
+     * Extract taz.gz archive
+     *
+     * @param source Taz.gz archive path
+     * @param targetDir Target path to extract data
+     * @throws IOException
+     */
     public static void decompressTarGz(Path source, Path targetDir) throws IOException {
         try (final InputStream fileInputStream = Files.newInputStream(source);
              final BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);

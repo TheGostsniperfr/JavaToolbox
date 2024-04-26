@@ -29,6 +29,9 @@ public enum ArchType {
         throw new IllegalArgumentException("Unknown architecture type: " + archTypeStr);
     }
 
+    /**
+     * @return Get current os architecture
+     */
     public static ArchType getCurrentArchitecture() {
         String osArch = System.getProperty("os.arch").toLowerCase();
         ArchType architecture = ArchType.NOT_SUPPORTED;
